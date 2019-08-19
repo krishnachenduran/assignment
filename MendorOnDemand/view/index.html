@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Mendor-On-Demand</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!------------------------Stylesheet------------------------->
+        <!------------------------local link files------------------->
+        <link rel="stylesheet" href="\MendorOnDemand\theme\css\style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/MendorOnDemand/theme/css/main.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/MendorOnDemand/theme/css/loader.css">
+        <script src="/MendorOnDemand/theme/js/main.js" ></script>
+        <script src="/MendorOnDemand/theme/js/loader.js" ></script>
+
+        <!--Bootstrap cdn links-->
+
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+        <script>
+            function form3() {
+                var fname = document.getElementById("fname3");
+                var lname = document.getElementById("lname3");
+                var gender = document.getElementById("gender3");
+              var contact = document.getElementById("contact3");
+              var email = document.getElementById("email3");
+              var uname = document.getElementById("name3");
+              var pwd = document.getElementById("pwd3");
+              
+               var letters = /^[A-Za-z]+$/;
+               var numbers = /^[0-9]+$/;
+               var pass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+               var alnum = /^[A-Za-z0-9]+$/;
+               var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+              
+               
+               
+              /******FIRSTNAME******/
+              
+              if(fname.value == ""){
+                alert("Firstname should not be empty.");
+                fname.focus();
+                return false;
+              }
+              else if(!(fname.value.match(letters))){
+                alert("Firstname must only contain letters.");
+                fname.focus();
+                return false;
+              }
+              
+              
+              /******LASTNAME******/
+              
+              if(lname.value == ""){
+                alert("Lastname should not be empty.");
+                lname.focus();
+                return false;
+              }
+              else if(!(lname.value.match(letters))){
+                alert("Lastname must only contain letters.");
+                lname.focus();
+                return false;
+              }
+              
+              /******GENDER******/
+              
+              if(gender.value == ""){
+                alert("Please select gender.");
+                gender.focus();
+                return false;
+              }
+                
+                
+                /******CONTACT******/
+                
+                if(contact.value == ""){
+                  alert("Contact should not be empty.");
+                  contact.focus();
+                  return false;
+                }
+                else if(!(contact.value.match(numbers))){
+                  alert("Contact must only contain digits.");
+                  contact.focus();
+                  return false;
+                }
+                else if(contact.value.length < 10){
+                  alert("Contact must be 10 digits long.");
+                  contact.focus();
+                  return false;
+                }
+                
+                
+                
+                /******EMAIL******/
+              
+              if(email.value == ""){
+                alert("Email should not be empty.");
+                email.focus();
+                return false;
+              }
+              else if(!(email.value.match(mail))){
+                alert("Invalid email id.");
+                email.focus();
+                return false;
+              }
+                
+               
+                
+               /******USERNAME******/
+              
+              if(uname.value == ""){
+                alert("Username should not be empty.");
+                uname.focus();
+                return false;
+              }
+              else if(uname.value.length < 6){
+                alert("Username must be atleast 6 characters long.");
+                uname.focus();
+                return false;
+              }
+              else if(!(uname.value.match(alnum))){
+                alert("Username only contains letters and numbers (no special characters)");
+                uname.focus();
+                return false;
+              }
+                
+                
+              /******PASSWORD******/
+              
+              if(pwd.value == ""){
+                alert("Password should not be empty.");
+                pwd.focus();
+                return false;
+              }
+              else if(pwd.value.length < 8){
+                alert("Password must be atleast 8 characters long.");
+                pwd.focus();
+                return false;
+              }
+              else if(!(pwd.value.match(pass))){
+                alert("Password : \nContains at least 1 numberContains at least 1 lowercase letter\nContains at least 1 uppercase letter\nContains a special character (e.g. @ !)");
+                pwd.focus();
+                return false;
+              }
+                
+              return true;
+                
+            }
+            
+            
+            /*************************************************************************REGISTER DOCTOR**************************************************************************/
+            function form4() {
+              var fname = document.getElementById("fname4");
+              var lname = document.getElementById("lname4");
+            var specialization = document.getElementById("specialization4");
+            var practice = document.getElementById("practice4");
+            var clinic = document.getElementById("clinic4");
+            var contact = document.getElementById("contact4");
+            var email = document.getElementById("email4");
+            var uname = document.getElementById("name4");
+            var pwd = document.getElementById("pwd4");
+            
+             var letters = /^[A-Za-z]+$/;
+             var numbers = /^[0-9]+$/;
+             var pass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+             var alnum = /^[A-Za-z0-9]+$/;
+             var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            
+             
+             
+            /******FIRSTNAME******/
+            
+            if(fname.value == ""){
+              alert("Firstname should not be empty.");
+              fname.focus();
+              return false;
+            }
+            else if(!(fname.value.match(letters))){
+              alert("Firstname must only contain letters.");
+              fname.focus();
+              return false;
+            }
+            
+            
+            /******LASTNAME******/
+            
+            if(lname.value == ""){
+              alert("Lastname should not be empty.");
+              lname.focus();
+              return false;
+            }
+            else if(!(lname.value.match(letters))){
+              alert("Lastname must only contain letters.");
+              lname.focus();
+              return false;
+            }
+            
+            
+              /******SPECIALIZATION******/
+            
+            if(specialization.value == ""){
+              alert("Specialization should not be empty.");
+              specialization.focus();
+              return false;
+            }
+            else if(!(specialization.value.match(letters))){
+              alert("Specialization must only contain letters.");
+              specialization.focus();
+              return false;
+            }
+            
+              
+              /******PRACTICE******/
+            
+            if(practice.value == ""){
+              alert("Practice should not be empty.");
+              practice.focus();
+              return false;
+            }
+            else if(!(practice.value.match(numbers))){
+              alert("Practice must only contain digits.");
+              practice.focus();
+              return false;
+            }
+              
+              
+              /******CLINIC******/
+            
+            if(clinic.value == ""){
+              alert("Clinic should not be empty.");
+              clinic.focus();
+              return false;
+            }
+            else if(!(clinic.value.match(letters))){
+              alert("Clinic must only contain letters.");
+              clinic.focus();
+              return false;
+            }
+              
+              
+              /******CONTACT******/
+              
+              if(contact.value == ""){
+                alert("Contact should not be empty.");
+                contact.focus();
+                return false;
+              }
+              else if(!(contact.value.match(numbers))){
+                alert("Contact must only contain digits.");
+                contact.focus();
+                return false;
+              }
+              else if(contact.value.length < 10){
+                alert("Contact must be 10 digits long.");
+                contact.focus();
+                return false;
+              }
+              
+              
+              
+              /******EMAIL******/
+            
+            if(email.value == ""){
+              alert("Email should not be empty.");
+              email.focus();
+              return false;
+            }
+            else if(!(email.value.match(mail))){
+              alert("Invalid email id.");
+              email.focus();
+              return false;
+            }
+              
+             
+              
+             /******USERNAME******/
+            
+            if(uname.value == ""){
+              alert("Username should not be empty.");
+              uname.focus();
+              return false;
+            }
+            else if(uname.value.length < 6){
+              alert("Username must be atleast 6 characters long.");
+              uname.focus();
+              return false;
+            }
+            else if(!(uname.value.match(alnum))){
+              alert("Username only contains letters and numbers (no special characters)");
+              uname.focus();
+              return false;
+            }
+              
+              
+            /******PASSWORD******/
+            
+            if(pwd.value == ""){
+              alert("Password should not be empty.");
+              pwd.focus();
+              return false;
+            }
+            else if(pwd.value.length < 8){
+              alert("Password must be atleast 8 characters long.");
+              pwd.focus();
+              return false;
+            }
+            else if(!(pwd.value.match(pass))){
+              alert("Password : \nContains at least 1 numberContains at least 1 lowercase letter\nContains at least 1 uppercase letter\nContains a special character (e.g. @ !)");
+              pwd.focus();
+              return false;
+            }
+              
+            return true;
+              
+          }
+          
+          /*******/
+           close = document.getElementById("close");
+                   
+          
+          </script>
+          
+          <style>
+            /******************************/
+              #note {
+                  position: absolute;
+                  z-index: 101;
+                  top: 0;
+                 padding-left: 20px;
+                 padding-right: 20px;
+                  background: #28a745;
+                  text-align: center;
+                  line-height: 2.5;
+                  overflow: hidden; 
+                  -webkit-box-shadow: 0 0 5px black;
+                  -moz-box-shadow:    0 0 5px black;
+                  box-shadow:         0 0 5px black;
+                  color: white;
+              }
+              
+          
+          </style>
+          
+          <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+            
+
+    </head>
+
+    <body>
+        <!-----------Nav Bar----------->
+        <section id="nav-bar">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+                        <a class="navbar-brand" href="#"><img src="D:\MendorOnDemand\theme\images\logo1.png"></a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="navb" class="navbar-collapse collapse hide">
+                          <ul class="navbar-nav">
+                            <li class="nav-item active">
+                              <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">User</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Mendor</a>
+                            </li>
+                          </ul>
+                      
+                          <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"><span class="fas fa-user"  data-toggle="modal" data-target="#registerModal"> Sign Up</span></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"><span class="fas fa-sign-in-alt"  data-toggle="modal" data-target="#loginModal"> Login</span></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+        </section>
+        <!----------------------------------Slider--------------------------->
+        <div id="slider">
+            <div id="headerSlider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="headerSlider" data-slide-to="0" class="active"></li>
+                  <li data-target="headerSlider" data-slide-to="1"></li>
+                  <li data-target="headerSlider" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="\MendorOnDemand\theme\images\img_2.jpg"class="d-block img-fluid" alt="Check for Inernet...">
+                    <div class="carousel-caption">
+                      <h5>Welcome to the Next Level of Learning Environment</h5> 
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="\MendorOnDemand\theme\images\img_1.jpg"  class="d-block img-fluid" alt="Check for Inernet...">
+                    <div class="carousel-caption">
+                        <h5>Learn Through Exploration</h5> 
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="\MendorOnDemand\theme\images\img_3.jpg" class="d-block img-fluid" alt="Check for Inernet...">
+                    <div class="carousel-caption">
+                        <h5>Everyone Can Learn And Everyone Can Teach</h5> 
+                      </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>               
+        </div>
+        <!---------------About-------------------------------->
+        <section id="about">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                    <h2>About Us</h2>
+                      <div class="about-content">
+                          Our mission is to deliver Simply Easy Learning with clear, crisp, and to-the-point content on a wide range of technical and
+                           non-technical subjects without any preconditions and impediments.Our content and resources are freely available and we prefer 
+                           to keep it that way to encourage our readers acquire as many skills as they would like to. We don’t force our readers to sign 
+                           up with us or submit their details either. No preconditions and no impediments. Simply Easy Learning!
+                      </div>
+                        <button type="button" class="btn btn-dark custom-btn">Read More</button>
+                  </div>
+                  <div class="col-md-6 skills-bar">
+                    <p>Font End</p>
+                    <div class="progess">
+                      <div class="progress-bar" style="width:80%;">80%</div>
+                    </div>
+                    <p>Java</p>
+                    <div class="progess">
+                      <div class="progress-bar" style="width:90%;">90%</div>
+                    </div>
+                    <p>Spring</p>
+                    <div class="progess">
+                      <div class="progress-bar" style="width:50%;">50%</div>
+                    </div>
+                    <p>Hibernate</p>
+                    <div class="progess">
+                      <div class="progress-bar" style="width:60%;">60%</div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+         <!--------------------------------Login Register Modal STARTS------------------------------------------------------------------->
+         <div style="margin-left: -25%;">
+            <div id="loginModal" class="modal fade" role="dialog" style="outline: none; margin-left: 0%; position: relative;  transform: translateY(-120%);">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content" style="width: 1000px;">
+                        <div class="container">
+                        <div class="modal-body">
+                                <p class="tip"><img src="/MOD/theme1/images/logo1.png" alt="logo" height="70px"></p>
+                                <div class="cont">
+                                  <div class="form sign-in">
+                                    <h2>User Login</h2>
+                                    <c:url var="validateUrl" value="/user/validate" />
+	<form id="user_form1" action="${validateUrl}" method="POST">
+    <label>
+      <span>User Name</span>
+      <input type="text" class="form-control" id="name1" name="username" required/>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd1" name="password" required/>
+    </label>
+    
+    <button type="submit" class="submit">Login</button>
+   
+    </form>
+    </div>
+                                  <div class="sub-cont">
+                                    <div class="img">
+                                      <div class="img__text m--up">
+                                        <h2>I'm a Mendor !</h2>
+                                        <p>Mendor? Please click the below button to login.</p>
+                                      </div>
+                                      <div class="img__text m--in">
+                                        <h2>I'm a User !</h2>
+                                        <p>User? Please click the below button to login.</p>
+                                      </div>
+                                      <div class="img__btn">
+                                        <span class="m--up">Mendor</span>
+                                        <span class="m--in">User</span>
+                                      </div>
+                                    </div>
+                                    <div class="form sign-up">
+                                      <h2>Mendor Login</h2>
+                                      <c:url var="DocvalidateUrl" value="/user/docvalidate" />
+	<form id="user_form2" action="${DocvalidateUrl}" method="POST">
+    <label>
+      <span>User Name</span>
+      <input type="text" class="form-control" id="name2" name="username" required/>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd2" name="password" required/>
+    </label>
+    
+    <button type="submit" class="submit">Login</button>
+    
+    </form>
+    </div>
+                                  </div>
+                                </div>    
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        
+        <div style="margin-left: -25%;">
+            <div id="registerModal" class="modal fade" role="dialog" style="outline: none; margin-left: 0%; position: relative;  transform: translateY(-120%);">
+                <div class="modal-dialog">
+            
+                        <!-- Modal content-->
+                        <div class="modal-content" style="width: 1000px;">
+                            <div class="container">
+                            <div class="modal-body">
+                            <a href="#"><img src="/MOD/theme1/images/logo1.png"  width="300px" style="padding-top: 20px; padding-bottom: 20px;"></a>
+                            
+                            <div class="cont1">
+                            <div class="form sign-in">
+                                <h2>Register as User</h2>
+                                <c:url var="registerUrl" value="/user/register" />
+    <div style = "height: 500px; overflow: auto;">
+	<form id="register_form3" onSubmit="return form3()" action="${registerUrl}" method="POST">
+    <label for="fname3">
+      <span>First Name</span>
+       <input type="text" class="form-control" id="fname3"  name="firstName" />
+       <ul class="input-requirements">
+	   		<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    <label for="lname3">
+      <span>Last Name</span>
+       <input type="text" class="form-control" id="lname3"  name="lastName" />
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    <label>
+      <span>Date of Birth </span>
+       <input type="date" class="form-control" id="age3"  name="age" />
+    </label>
+    <label>
+      <span>Gender : </span>
+       	<select name="gender" id="gender3">
+       		<option value="">Select</option>
+       		<option  vlaue="male">Male</option>
+       		<option  vlaue="female">Female</option>
+       		<option  vlaue="other">Other</option>
+       	</select>
+    </label>
+    <label for="contact3">
+      <span>Contact Number</span>
+       <input type="text" class="form-control" id="contact3"  name="mobile" />
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must contain digits only</li>
+			<li>Must be 10 digits long</li>
+		</ul>
+    </label>
+    <label for="email3">
+      <span>Email</span>
+      <input type="text" class="form-control" id="email3"  name="email" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must be a valid email id</li>
+		</ul>
+    </label>
+    <label for="name3">
+      <span>User Name</span>
+       <input type="text" class="form-control" id="name3"  name="username"  maxlength=15/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 6 characters long</li>
+			<li>Must only contain letters and numbers (no special characters)</li>
+		</ul>
+    </label>
+    <label for="pwd3">
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd3"  name="password" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 8 characters long (and less than 100 characters)</li>
+			<li>Contains at least 1 number</li>
+			<li>Contains at least 1 lowercase letter</li>
+			<li>Contains at least 1 uppercase letter</li>
+			<li>Contains a special character (e.g. @ !)</li>
+		</ul>
+    </label>
+    <button type="submit" class="submit">Register</button>
+    <button type="button" class="fb-btn" onClick="location.href='index.jsp';">Login</button>
+    </form>
+    </div>
+  </div>
+                            <div class="sub-cont">
+                                <div class="img">
+                                <div class="img__text m--up">
+                                    <h2>I'm a Mendor !</h2>
+                                    <p>Mendor? Please click the below button to login.</p>
+                                </div>
+                                <div class="img__text m--in">
+                                    <h2>I'm a User !</h2>
+                                    <p>User? Please click the below button to login.</p>
+                                </div>
+                                <div class="b1">
+                                <div class="img__btn">
+                                    <span class="m--up">Mendor</span>
+                                    <span class="m--in">User</span>
+                                </div>
+                                </div>
+                                </div>
+                                
+                                <div class="form sign-up">
+                                <h2>Register as Mendor</h2>
+                                <c:url var="docregisterUrl" value="/doctor/register" />
+     
+     <div style = "height: 500px; overflow: auto;">
+	<form id="register_form4"  onSubmit="return form4()" action="${docregisterUrl}" method="POST">
+    <label for="fname4">
+      <span>First Name</span>
+       <input type="text" class="form-control" id="fname4"  name="firstName"/>
+       <ul class="input-requirements">
+	   		<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="lname4">
+      <span>Last Name</span>
+       <input type="text" class="form-control" id="lname4"  name="lastName"/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="age4">
+      <span>Date of Birth </span>
+       <input type="date" class="form-control" id="age4"  name="age" />
+    </label>
+    
+    <label for="specialization4">
+      <span>Specialization</span>
+       <input type="text" class="form-control" id="specialization4"  name="specialization"/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="practice4">
+      <span>Experience</span>
+       <input type="text" class="form-control" id="practice4"  name="Experience" />
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain Number</li>
+		</ul>
+    </label>
+    
+    <label for="clinic4">
+      <span>Office</span>
+       <input type="text" class="form-control" id="clinic4"  name="Office" />
+        <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="contact4">
+      <span>Contact Number</span>
+       <input type="text" class="form-control" id="contact4"  name="mobile" maxlength="10"/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must contain digits only</li>
+			<li>Must be 10 digits long</li>
+		</ul>
+    </label>
+    
+    <label for="email4">
+      <span>Email</span>
+      <input type="text" class="form-control" id="email4"  name="email" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must be a valid email id</li>
+		</ul>
+    </label>
+    
+    <label for="name4">
+      <span>User Name</span>
+       <input type="text" class="form-control" id="name4"  name="username" maxlength=15/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 6 characters long</li>
+			<li>Must only contain letters and numbers (no special characters)</li>
+		</ul>
+    </label>
+    
+    <label for="pwd4">
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd4"  name="password" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 8 characters long (and less than 100 characters)</li>
+			<li>Contains at least 1 number</li>
+			<li>Contains at least 1 lowercase letter</li>
+			<li>Contains at least 1 uppercase letter</li>
+			<li>Contains a special character (e.g. @ !)</li>
+		</ul>
+    </label>
+    
+    <button type="submit" class="submit">Register</button>
+    <button type="button" class="fb-btn" onclick="location.href='index.jsp';">Login</button>
+    </form>
+    </div>
+    </div>
+                            </div>
+                            </div>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <script src="/MOD/theme1/js/register.js" ></script>
+        </div>
+         <script src="/MOD/theme1/js/index.js" ></script>
+    
+        <!--Login Register Modal ENDS-->
+        
+    </body>
+</html>    
