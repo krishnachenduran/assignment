@@ -192,7 +192,7 @@ input, button {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url("../images/doc1.jpg");
+    background-image: url("../images/mendor.jpg");
     background-size: cover;
     transition: -webkit-transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out;
@@ -449,4 +449,90 @@ input, button {
     max-height: 1000px; /* any large number (bigger then the .input-requirements list) */
     transition: max-height 1s ease-in;
   }
-  
+/*----------------------Course Details------------------------------*/
+.fh5co-bg-section {
+  background: #e8e8e8;
+}
+#fh5co-course-categories,
+#fh5co-counter,
+#fh5co-course,
+#fh5co-register,
+#fh5co-pricing,
+#fh5co-testimonial,
+#fh5co-blog,
+#fh5co-about,
+#fh5co-staff,
+#fh5co-contact,
+#fh5co-footer {
+  padding: 7em 0;
+  clear: both;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-course-categories,
+  #fh5co-counter,
+  #fh5co-course,
+  #fh5co-register,
+  #fh5co-pricing,
+  #fh5co-testimonial,
+  #fh5co-blog,
+  #fh5co-about,
+  #fh5co-staff,
+  #fh5co-contact,
+  #fh5co-footer {
+    padding: 3em 0;
+  }
+}
+
+.services {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.services h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.services h3 a {
+  color: #000;
+}
+.services .icon {
+  width: 90px;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.04);
+  display: table;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+@media screen and (max-width: 992px) {
+  .services .icon {
+    margin: 0 auto 30px auto;
+  }
+}
+.services .icon i {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 40px;
+  line-height: 40px;
+  color: #000;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.services:hover .icon, .services:focus .icon {
+  background: #2D6CDF;
+}
+.services:hover .icon i, .services:focus .icon i {
+  color: #fff;
+}
